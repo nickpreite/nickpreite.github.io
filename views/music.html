@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hollow Turtle - Music</title>
+    <meta name="description" content="American Bluegrass Band from Warren Rhode Island"/>
+    <meta name="author" content="Nicholas Preite" />
+    <meta name="keywords" content="Bluegrass Music American" />
+    <link rel="stylesheet" href="../stylesheets/stylesheet.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <style type="text/css">.body { width: auto; }</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel ="icon" type="image/x-icon" href="../images/PosterNoName.png">
+  </head>
+  <header>
+    <img src="../images/logo.png" style="max-width: 60%;">      
+    <h1>MUSIC</h1>
+  </header>
+
+  <body style="background-image: url(../images/Gator.png);">
+
+    <script>
+      //Sticking NavBar to top on scroll
+      $(document).ready(function(){
+        var distance = $("#navBar").offset().top;
+      $(window).scroll(function(){
+        if($(this).scrollTop() >= distance){
+          $("#navBar").css({position:'fixed', top: '0px', left:'0px'});          
+        }else{
+          $("#navBar").css({position:'static'});
+        }
+      });
+      })      
+    </script>
+    <script>
+      //This script is for selecting a song to play. When the song selection is clicked, the Audio Player will load the song source
+      //and title, and begin playing the song.
+      var songSource;
+      var songName;
+      $(document).ready(function(){        
+        $(".songContainer").click(function(){
+          $("#currentlyPlaying").show();
+          songSource = $(this).attr('data-song-source');   
+          songName = $(this).attr('data-song-name')       
+          $("#currentlyPlaying").contents(Audio).attr('src', songSource);  
+          $("#currentlyPlaying").contents('p').text(songName);    
+          var x = document.getElementById("audioControl");
+          x.play();          
+        });
+      });
+    </script>
+
+    <script>
+      //show/hide song lists
+      $(document).ready(function(){
+        $(".albumChoice").click(function(){
+          var albumChoice = $(this).attr('data-album');
+          $(".albumContainer").hide();
+          $(albumChoice).show();  
+          $(".displayTracks").contents('h3').text("");       
+        });
+      });
+    </script>
+
+
+    <div id="navBar">
+      <a href="index.html">
+      <div class="navButton">
+        HOME
+      </div>
+      </a>
+      <a href="music.html">
+      <div class="navButton">
+        MUSIC
+      </div>
+      </a>
+      <a href="videos.html">
+      <div class="navButton">
+        VIDEOS
+      </div>
+      </a>
+      
+    </div>
+    
+    
+    <div id="mainSite" style="margin-bottom: 150px;">
+
+      <div class="post">
+
+
+        <div id="allAlbums">
+          <div class="albumChoice" data-album="#rcbh">
+            <img src="../images/rcbhCover.png" style="width: 100%;border:2px solid #000000">
+          </div>
+          <br>
+          <div class="albumChoice" data-album="#tpb">
+           <img src="../images/TPBCover.png" style="width: 100%;border: 2px solid #000000;">
+          </div>
+          <a href="https://open.spotify.com/artist/2qN6sHUKyErJutR8an5EJs">
+          <div class="spotifyButton">            
+              <p style="font-family: 'Abel',sans-serif;font-size: x-large;">
+                SPOTIFY
+              </p>              
+          </div>
+          </a>
+          
+        </div>
+
+        <div class="displayTracks">
+          <h3 style="text-align: center;">Select An Album from the left</h3>
+          <div class="albumContainer" id="rcbh">
+            <p style="text-align: center;">Rocking Chair Back Home 2023</p>        
+    
+            <div class="songContainer" data-song-source="../audio/Boozehounds.mp3" data-song-name="Boozehounds">           
+              <p>BoozeHounds<span style="float:right">2:44</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/Pumphouse.mp3" data-song-name="Pumphouse">                 
+              <p>Pumphouse<span style="float:right">4:04</span></p>          
+            </div>       
+    
+            <div class="songContainer" data-song-source="../audio/Ride.mp3" data-song-name="Ride">                 
+              <p>Ride<span style="float:right">4:49</span></p>          
+            </div>  
+    
+            <div class="songContainer" data-song-source="../audio/That_s Where I_ll Be.mp3" data-song-name="That's Where I'll Be">                 
+              <p>That's Where I'll Be<span style="float:right">4:56</span></p>   
+                
+            </div>  
+    
+            <div class="songContainer" data-song-source="../audio/Vagabond.mp3" data-song-name="Vagabond">                 
+              <p>Vagabond<span style="float:right">2:19</span></p>          
+            </div>  
+          </div> 
+            
+          
+          <div class="albumContainer" id="tpb">
+            <p style="text-align: center;">Ten Pound Boots 2019</p>
+    
+            <div class="songContainer" data-song-source="../audio/Dust.wav" data-song-name="Dust">           
+              <p>Dust<span style="float:right">3:42</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/JennyPond.wav" data-song-name="Jenny Pond">           
+              <p>Jenny Pond<span style="float:right">5:48</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/TheRiver.wav" data-song-name="The River">           
+              <p>The River<span style="float:right">2:39</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/GreenMountainBoys.wav" data-song-name="Green Mountain Boys">           
+              <p>Green Mountain Boys<span style="float:right">3:06</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/MorningWood.wav" data-song-name="Morning Wood">           
+              <p>Morning Wood<span style="float:right">3:10</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/BeenALongDay.wav" data-song-name="Been A Long Day">           
+              <p>Been A Long Day<span style="float:right">4:21</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/AngelOfDeath.wav" data-song-name="Angel Of Death">           
+              <p>Angel Of Death<span style="float:right">4:14</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/DyingDay.wav" data-song-name="Dying Day">           
+              <p>Dying Day<span style="float:right">4:14</span></p>      
+            </div>
+    
+            <div class="songContainer" data-song-source="../audio/OneMoreDrink.wav" data-song-name="One More Drink">           
+              <p>One More Drink<span style="float:right">3:57</span></p>      
+            </div>
+    
+          </div>
+
+        </div>
+      
+      
+      
+        
+        <div id="currentlyPlaying">
+          <p>Please Select A Song</p>
+          <audio controls src="" id="audioControl">                       
+          </audio>
+                   
+        </div>  
+      </div> 
+      
+      <br>
+      <div style="width: 100%; text-align: center;">
+        <a href="http://www.facebook.com/HollowTurtle">
+        <img src="../images/facebook.png" class="socialIcon"></a>
+        <a href="http://www.instagram.com/hollowturtlemusic">
+        <img src="../images/insta.png" class="socialIcon"></a>
+        <a href="https://www.youtube.com/channel/UCmtYkBABkFYXF4APMBL4zIw">
+        <img src="../images/youtube.png" class="socialIcon"></a>
+      </div>
+    </div>
+
+  </body>
+
+  <footer>    
+    
+    <p>
+      &copy;Nicholas Preite 2023
+    </p>
+  </footer>
+</html>
